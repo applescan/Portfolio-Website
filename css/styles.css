@@ -186,3 +186,6 @@ footer {
     color: var(--primary-blue);
 }
 
+.darkmode-toggle {
+    z-index: 10;
+}
