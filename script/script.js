@@ -1,7 +1,7 @@
 const options = {
-    bottom: '32px', // default: '32px'
+    bottom: '25px', // default: '32px'
     right: 'unset', // default: '32px'
-    left: '32px', // default: 'unset'
+    left: '20px', // default: 'unset'
     time: '0.5s', // default: '0.3s'
     mixColor: '#fff', // default: '#fff'
     backgroundColor: '#fff',  // default: '#fff'
