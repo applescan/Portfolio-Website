@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --main-bg-color: #F3F3F3;
+    --primary-blue: #6C9FFB;
+    --project-hover: #ecf0f7;
+    --tech-logo-hover: #D7E5F8;
+    --main-margin: 4% 20%;
+    --main-margin-mobile: 15%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-bg-color);
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0;
+    padding: 0;
+    line-height: 1;
+    max-height: 100vh;
+    justify-content: space-around;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: var(--main-bg-color);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 2%;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav a:hover {
+    color: var(--primary-blue);
+}
+
+.topnav a.active {
+    color: var(--primary-blue);
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.header-right {
+    float: right;
+}
+
+#logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.main {
+    display: flex;
+    margin: var(--main-margin);
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+}
+
+.profile>img {
+    height: 450px;
+}
+
+.super-text {
+    font-size: 110px;
+}
+
+.resume {
+    display: block;
+    margin: var(--main-margin);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    height: 15vh;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.project:hover {
+    background-color: var(--project-hover);
+    border-radius: 15px;
+}
+
+.project>img {
+    border-radius: 15px;
+    height: 300px;
+}
+
+.projectName {
+    padding-right: 15%;
+}
+
+.resume>a {
+    text-decoration: none;
+    color: black;
+}
+
+.expertise {
+    display: flex;
+}
+
+.expertise>div {
+    padding-right: 10%;
+}
+
+.project-image {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    width: 60vw;
+}
+
+.project-image>img {
+    width: 60vw;
+}
+
+.tech-logo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tech-logo>img {
+    height: 45px;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+.tech-logo>a {
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: var(--primary-blue);
+    padding: 15px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.tech-logo>a:hover {
+    background-color: var(--tech-logo-hover);
+    color: var(--primary-blue);
+}
+
