@@ -131,7 +131,7 @@ footer {
     display: block;
     justify-content: space-between;
     padding: 0;
-    width: auto;
+    width: 80%;
 }
 
 .project:hover {
@@ -140,7 +140,7 @@ footer {
 
 .project>img {
     border-radius: 5px;
-    height: 180px;
+    width: 60vw;
     text-align: center;
 }
 
