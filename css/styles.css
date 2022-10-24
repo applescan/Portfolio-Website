@@ -189,3 +189,7 @@ footer {
 .darkmode-toggle {
     z-index: 10;
 }
+
+.darkmode--activated {
+    z-index: 100;
+}
