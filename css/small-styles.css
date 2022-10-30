@@ -198,10 +198,6 @@ footer {
     color: var(--primary-blue);
 }
 
-video {
-    width: 300px;
-}
-
 .darkmode-toggle {
     z-index: 10;
 }
