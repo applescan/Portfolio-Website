@@ -130,22 +130,23 @@ footer {
 .project {
     display: block;
     justify-content: space-between;
-    padding: 0;
+    padding: 10%;
     width: 100%;
 }
 
 .project:hover {
     background-color: var(--main-bg-color);
+
 }
 
 .project>img {
     border-radius: 5px;
-    width: 70vw;
+    width: 56vw;
     text-align: center;
 }
 
 .projectName {
-    padding-right: 0%;
+    padding-right: 0;
 }
 
 .project-image>img {
