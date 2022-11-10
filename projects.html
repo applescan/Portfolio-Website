@@ -10,12 +10,21 @@
     <link rel="stylesheet" href="css/styles.css" media="screen and (min-width: 900px)">
     <link rel="stylesheet" href="css/small-styles.css" media="screen and (max-width: 900px)">
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="script/script.js"></script>
 </head>
 
 <body>
+
     <div class="topnav">
-        <a href="https://applescan.github.io/Portfolio-Website/" id="logo">🦠 Felicia Fel</a>
+        <a href="index.html" id="logo">🦠 Felicia Fel</a>
         <div class="header-right" id="myTopnav">
             <a href="about.html">About</a>
             <a href="resume.html">Resume</a>
@@ -29,133 +38,83 @@
         </div>
         <br>
         <br>
-
-        <a href="mixtape-me.html">
-            <div class="project">
-
-                <div class="projectName">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Mixtape-me | Spotify app integration.</h2>
-                    <p>Full Stack Web Developer | 2022 | Spotify Web API</p>
-                </div>
-
-                <img src="images/project/mix1.webp">
-            </div>
-        </a>
-
-        <a href="airscammer.html">
-            <div class="project">
-
-                <div class="projectName">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Airscammer - Let's Learn About Airline Scams!</h2>
-                    <p>Full Stack Web Developer | 2022 | Future Skills Academy</p>
-                </div>
-
-                <img src="images/project/airscammer.webp">
-            </div>
-        </a>
-
-        <a href="deltapathMobile.html">
-            <div class="project">
-                <div class="projectName">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Deltapath Mobile UI & UX Design</h2>
-                    <p>UI & UX Design | 2022 | Deltapath</p>
-                </div>
-                <img src="images/project/dpm.webp">
-            </div>
-        </a>
-
-        <a href="salesforce.html">
-            <div class="project">
-                <div class="projectName">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Deltapath Salesforce CTI Integration</h2>
-                    <p>UI & UX Design | 2022 | Deltapath</p>
-                </div>
-                <img src="images/project/cti.webp">
-            </div>
-        </a>
-
-        <a href="talk.html">
-            <div class="project">
-                <div class="projectName">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Deltapath Talk (Microsoft Teams Integration)</h2>
-                    <p>UI Design | 2022 | Deltapath</p>
-                </div>
-                <img src="images/project/dpm-talk.webp">
-            </div>
-        </a>
-
-        <a href="therapy.html">
-            <div class="project">
-                <div class="projectName">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Let's Talk Therapy </h2>
-                    <p>Web Design & Development, Logo & Branding | 2022 | Let's Talk Therapy</p>
-                </div>
-                <img src="images/project/therapy.webp">
-            </div>
-        </a>
-
-        <a href="deltapathWebsite.html">
-            <div class="project">
-                <div class="projectName">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Corporate Website: Redesigning a Decade-Old Website</h2>
-                    <p>Web Design & Development | 2022 | Deltapath</p>
-                </div>
-                <img src="images/project/website.webp">
-            </div>
-        </a>
-
-        <a href="mana.html">
-            <div class="project">
-                <div class="projectName">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Mana - Power of Aotearoa</h2>
-                    <p>Identity & Branding, Print | 2019 </p>
-                </div>
-                <img src="images/project/mana.webp">
-            </div>
-        </a>
-
+        <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2" id="main-row">
+            <template id="card-template">
+                <div class="col mb-4">
+                    <div id="card-list">
+                        <div class="card h-100">
+                            <a id="page">
+                                <img class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="card-title"></div>
+                                    <div class="card-text"></div>
+                            </a>
+                        </div>
+                    </div>
+            </template>
+        </div>
     </div>
     <hr>
-    <footer>
-        <div>
-            <h4>Email</h4>
-            <p>feliu.ren@gmail.com</p>
+    <footer class="text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h4>Email</h4>
+                    <p>
+                        feliu.ren@gmail.com
+                    </p>
+                </div>
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h4>Follow Me</h4>
+
+                    <a href="https://www.linkedin.com/in/felicia-fel-711a91155/" target="_blank"><img
+                            src="images/linkedin.svg" height="30px"></a>
+                    <a href="https://github.com/applescan" target="_blank"><img src="images/github.svg"
+                            height="30px"></a>
+                </div>
+
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h4>© 2023 Copyright:</h4>
+
+                    <p>Felicia Fel.
+                    No more website builder 👾</p>
+                </div>
+            </div>
         </div>
-        <div>
-            <h4>Follow Me</h4>
-            <a href="https://www.linkedin.com/in/felicia-fel-711a91155/" target="_blank"><img src="images/linkedin.svg"
-                    height="30px"></a>
-            <a href="https://github.com/applescan" target="_blank"><img src="images/github.svg" height="30px"></a>
-        </div>
-        <div>
-            <h4>Website created by</h4>
-            <p> &copy; 2022 Felicia Fel. No more website builder 👾 </p>
-        </div>
+       
     </footer>
+
+
+    <script>
+        const data = [
+            { title: 'Mixtape-me | Spotify app integration.', desc: 'Full Stack Web Developer | 2022 | Spotify Web API', url: 'images/project/mix1.webp', ref: 'mixtape-me.html' },
+            { title: `Airscammer - Let's Learn About Airline Scams!`, desc: 'Full Stack Web Developer | 2022 | Future Skills Academy', url: 'images/project/airscammer.webp', ref: 'airscammer.html' },
+            { title: 'Deltapath Mobile UI & UX Design', desc: 'UI & UX Design | 2022 | Deltapath', url: 'images/project/dpm.webp', ref: 'deltapathMobile.html' },
+            { title: 'Deltapath Salesforce CTI Integration', desc: 'UI & UX Design | 2022 | Deltapath', url: 'images/project/cti.webp', ref: 'salesforce.html' },
+            { title: 'Deltapath Talk (Microsoft Teams Integration)', desc: 'UI Design | 2022 | Deltapath', url: 'images/project/dpm-talk.webp', ref: 'talk.html' },
+            { title: `Let's Talk Therapy`, desc: `Web Design & Development, Logo & Branding | 2022 | Let's Talk Therapy`, url: 'images/project/therapy.webp', ref: 'therapy.html' },
+            { title: 'Corporate Website: Redesigning a Decade-Old Website', desc: 'Web Design & Development | 2022 | Deltapath', url: 'images/project/website.webp', ref: 'deltapathWebsite.html' },
+            { title: 'Mana - Power of Aotearoa', desc: 'Identity & Branding, Print | 2019', url: 'images/project/mana.webp', ref: 'mana.html' },
+        ]
+
+        //using for loop
+        for (let i = 0; i < data.length; i++) { addCard2(data[i].title, data[i].desc, data[i].url, data[i].ref) } //using map const
+
+
+        function addCard2(name, age, url, ref) {
+            const template = document.getElementById("card-template").content.cloneNode(true);
+            template.querySelector('.card-title').innerText = name;
+            template.querySelector('.card-text').innerText = age;
+            template.querySelector('.card-img-top').src = url;
+            template.querySelector('#page').href = ref;
+            document.querySelector('#main-row').appendChild(template);
+        }
+
+    </script>
 </body>
 
 </html>
