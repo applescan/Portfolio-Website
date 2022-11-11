@@ -206,3 +206,7 @@ footer {
 .darkmode--activated {
     z-index: 100;
 }
+
+.social-icons {
+    margin-bottom: 1rem;
+}
