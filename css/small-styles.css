@@ -25,43 +25,6 @@ body {
     justify-content: space-around;
 }
 
-.topnav {
-    overflow: hidden;
-    background-color: var(--main-bg-color);
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding: 2%;
-}
-
-.topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 15px;
-    z-index: 5;
-}
-
-.topnav a:hover {
-    color: var(--primary-blue);
-}
-
-.topnav a.active {
-    color: var(--primary-blue);
-}
-
-.topnav .icon {
-    display: none;
-}
-
-#logo {
-    font-size: 25px;
-    font-weight: bold;
-}
-
 .header-right {
     float: left;
 }

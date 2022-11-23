@@ -25,60 +25,20 @@ body {
     justify-content: space-around;
 }
 
-.topnav {
-    overflow: hidden;
-    background-color: var(--main-bg-color);
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding: 2%;
-}
-
-.topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.topnav a:hover {
-    color: var(--primary-blue);
-}
-
-.topnav a.active {
-    color: var(--primary-blue);
-}
-
-.topnav .icon {
-    display: none;
-}
-
-.header-right {
-    float: right;
-}
-
-#logo {
-    font-size: 25px;
-    font-weight: bold;
-}
-
 .main {
-    display: flex;
+    display: block;
     margin: var(--main-margin);
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
+    height: 100%;
+    text-align: center;
 }
 
 .profile>img {
-    height: 22vw;
+    height: 20vw;
 }
 
 .super-text {
-    font-size: 100px;
+    font-size: 70px;
+    font-weight: 700;
 }
 
 .resume {
