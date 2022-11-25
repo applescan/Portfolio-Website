@@ -36,6 +36,10 @@ body {
     height: 20vw;
 }
 
+.profile>p {
+    text-align: justify;
+}
+
 .super-text {
     font-size: 70px;
     font-weight: 700;

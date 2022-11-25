@@ -35,11 +35,14 @@ body {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
-    text-align: justify;
 }
 
 .profile {
     text-align: center;
+}
+
+.profile>p {
+    text-align: justify;
 }
 
 .profile>img {
