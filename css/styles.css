@@ -32,12 +32,16 @@ body {
     text-align: center;
 }
 
+.navbar-brand {
+    font-weight: 700;
+}
+
 .profile>img {
     height: 20vw;
 }
 
 .profile>p {
-    text-align: justify;
+    text-align: left;
 }
 
 .super-text {

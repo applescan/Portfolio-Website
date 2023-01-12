@@ -29,6 +29,14 @@ body {
     float: left;
 }
 
+.nav-item {
+    text-align: center;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
 .main {
     display: block;
     margin: var(--main-margin-mobile);
@@ -42,7 +50,7 @@ body {
 }
 
 .profile>p {
-    text-align: justify;
+    text-align: left;
 }
 
 .profile>img {
