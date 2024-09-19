@@ -1,0 +1,121 @@
+---
+const { siteTitle } = Astro.props;
+---
+
+<header class="header">
+  <h1 class="extraBold">{siteTitle}</h1>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">☰</label>
+
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar">
+    <label for="menu-toggle" class="close-btn">×</label>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    position: relative;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0 1rem;
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 1rem;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #6c9ffb;
+    color: white;
+    transition: right 0.3s ease-in-out;
+    padding: 1rem;
+    overflow: auto;
+    z-index: 1000;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    margin-top: 2.5rem;;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    margin: 1rem 0;
+  }
+
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 1rem;
+  }
+
+  #menu-toggle:checked ~ .sidebar {
+    right: 0;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+    }
+  }
+</style>
