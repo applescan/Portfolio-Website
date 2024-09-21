@@ -8,11 +8,31 @@ export interface AboutMe {
   }
 }
 
+export interface Education {
+  contentTypeId: "education",
+  fields: {
+    title: EntryFieldTypes.Text
+    period: EntryFieldTypes.Text
+    description: EntryFieldTypes.Object,
+  }
+}
+
+export interface WorkExperience {
+  contentTypeId: "workExperience",
+  fields: {
+    title: EntryFieldTypes.Text
+    period: EntryFieldTypes.Text
+    descriptionList: EntryFieldTypes.Object,
+  }
+}
+
 export interface ProjectCard {
   contentTypeId: "projectCard",
   fields: {
     title: EntryFieldTypes.Text
     description: EntryFieldTypes.Text,
+    img: EntryFieldTypes.Text,
+    link: EntryFieldTypes.Text
   }
 }
 

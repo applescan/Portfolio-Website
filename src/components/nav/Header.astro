@@ -9,21 +9,21 @@ const { siteTitle } = Astro.props;
   <label for="menu-toggle" class="hamburger">☰</label>
 
   <nav class="nav">
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
+    <ul class="nav-links font16">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
     </ul>
   </nav>
 
-  <div class="sidebar">
+  <div class="sidebar font16">
     <label for="menu-toggle" class="close-btn">×</label>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
     </ul>
   </div>
 </header>
@@ -33,9 +33,11 @@ const { siteTitle } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 5%;
     background-color: white;
-    position: relative;
+    position: sticky;
+    z-index: 100;
+    top: 0;
   }
 
   .nav {
@@ -81,7 +83,7 @@ const { siteTitle } = Astro.props;
 
   .sidebar ul {
     list-style: none;
-    margin-top: 2.5rem;;
+    margin-top: 4.5rem;
     padding: 0;
   }
 
