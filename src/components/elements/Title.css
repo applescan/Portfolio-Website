@@ -1,0 +1,48 @@
+.title-container {
+  margin: 20px 0;
+}
+
+.title-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.left-side,
+.right-side {
+  width: 50%;
+  padding: 20px;
+}
+
+.left-side h4,
+.right-side h4 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 960px) {
+  .title-wrapper {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    padding-top: 10px;
+  }
+}
+
+.font30 {
+  font-size: 30px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.extraBold {
+  font-weight: 800;
+}
+
+.semiBold {
+  font-weight: 600;
+}

@@ -10,7 +10,7 @@
   @media (max-width: 960px) {
     .about {
       flex-direction: column;
-      padding: 15% 10%;
+        padding: 10% 10%;
     }
 
     .headerInfo {
@@ -20,10 +20,6 @@
 
   .darkBg {
     background-color: #6c9ffb;
-  }
-
-  .container {
-    margin: 0 auto;
   }
 
   .font40 {

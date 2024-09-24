@@ -7,13 +7,13 @@ interface ButtonProps {
   border?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ title, action, border }) => {
+const Button: FC<ButtonProps> = ({ title, action, border = false }) => {
   const buttonClass = border ? 'button border' : 'button';
 
   return (
     <button
       className={buttonClass}
-      onClick={action ? () => action() : undefined}
+      onClick={action}
     >
       {title}
     </button>

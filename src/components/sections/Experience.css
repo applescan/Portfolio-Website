@@ -31,15 +31,14 @@
 }
 
 @media (max-width: 860px) {
-  .header-info {
-    text-align: center;
+  .experience-wrapper {
+    padding: 20% 10%;
   }
   .tables-wrapper {
     flex-direction: column;
   }
   .table-box, .table-box-large {
     width: 100%;
-    max-width: 370px;
     margin: 0 auto;
   }
 }

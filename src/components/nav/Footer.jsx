@@ -9,7 +9,6 @@ export default function Contact() {
   return (
     <div className="footer">
       <div className="whiteBg">
-        <div className="container">
           <div className="innerWrapper flexSpaceCenter" style={{ padding: "30px 0" }}>
             <p className="styleP font13">
               © {getCurrentYear()} Designed and coded by - <span className="purpleColor font13">Felicia Fel</span> 🪅 | Email:{" "}
@@ -18,6 +17,5 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
