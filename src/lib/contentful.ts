@@ -53,24 +53,5 @@ export interface Hero {
   }
 }
 
-export interface ProjectPages {
-  contentTypeId: "projectPages",
-  fields: {
-    title: EntryFieldTypes.Text,
-    subtitle: EntryFieldTypes.Text,
-    longDescription: EntryFieldTypes.Text,
-    projectDescription: EntryFieldTypes.Object,
-    skills: EntryFieldTypes.Text,
-    year: EntryFieldTypes.Text,
-    problemTitle: EntryFieldTypes.Text,
-    problemDescription: EntryFieldTypes.Text,
-    processTitle: EntryFieldTypes.Text,
-    processDescription: EntryFieldTypes.Text,
-    processList: EntryFieldTypes.Object,
-    resultsTitle: EntryFieldTypes.Text,
-    resultsDescription: EntryFieldTypes.Text,
-  }
-}
-
 
 
