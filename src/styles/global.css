@@ -143,9 +143,16 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #fff;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.gstatic.com/s/poppins/v10/pxnqCvsBr7sGpRNeQ-9UkfKftxz1T2w1q5k.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/poppins/v10/pxnqCvsBr7sGpRNeQ-9UkfKftxz1T2w1q5k.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   background: #fff;
-  color: #0B093B;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   font-size: 16px;

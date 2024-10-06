@@ -79,6 +79,7 @@ const { siteTitle } = Astro.props;
     padding: 1rem;
     overflow: auto;
     z-index: 1000;
+    display: none;
   }
 
   .sidebar ul {
@@ -115,6 +116,10 @@ const { siteTitle } = Astro.props;
     .nav-links {
       display: none;
     }
+
+    .sidebar {
+    display: flex;
+  }
 
     .hamburger {
       display: block;
