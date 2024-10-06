@@ -1,8 +1,8 @@
 ---
-import About from "../components/Sections/About";
-import Experience from "../components/Sections/Experience";
-import Profile from "../components/Sections/Profile";
-import Projects from "../components/Sections/Projects";
+import About from "../components/sections/About";
+import Experience from "../components/sections/Experience";
+import Profile from "../components/sections/Profile";
+import Projects from "../components/sections/Projects";
 import Layout from "../layouts/Layout.astro";
 import {
   type AboutMe,
@@ -87,7 +87,7 @@ const educationItems = educationEntries.items.map((item) => ({
   {
     projectEntries.items.length > 0 && (
       <Projects
-        projectItems={projectEntries.items
+          projectItems={projectEntries.items
           .slice()
           .reverse()
           .map((item) => ({

@@ -12,11 +12,11 @@ interface TitleProps {
 const Title: React.FC<TitleProps> = ({ title, subtitle, descriptions, skills, year }) => {
   return (
     <div className="title-container">
-      <h1 className="font30 extraBold">{title}</h1>
-      <h2 className="font20 semiBold">{subtitle}</h2>
+      <h1 className="font30 bottom-spacing extraBold">{title}</h1>
+      <h2 className="font20 bottom-spacing semiBold">{subtitle}</h2>
 
       {descriptions.map((desc, index) => (
-        <p key={index}>{desc}</p>
+        <p className="bottom-spacing" key={index}>{desc}</p>
       ))}
 
       <div className="title-wrapper">

@@ -1,5 +1,13 @@
 import contentful, { type EntryFieldTypes } from "contentful";
 
+export const contentfulClient = contentful.createClient({
+  space: import.meta.env.CONTENTFUL_SPACE_ID,
+  accessToken: import.meta.env.DEV
+    ? import.meta.env.CONTENTFUL_PREVIEW_TOKEN
+    : import.meta.env.CONTENTFUL_DELIVERY_TOKEN,
+  host: import.meta.env.DEV ? "preview.contentful.com" : "cdn.contentful.com",
+});
+
 export interface AboutMe {
   contentTypeId: "aboutMe",
   fields: {
@@ -45,11 +53,24 @@ export interface Hero {
   }
 }
 
+export interface ProjectPages {
+  contentTypeId: "projectPages",
+  fields: {
+    title: EntryFieldTypes.Text,
+    subtitle: EntryFieldTypes.Text,
+    longDescription: EntryFieldTypes.Text,
+    projectDescription: EntryFieldTypes.Object,
+    skills: EntryFieldTypes.Text,
+    year: EntryFieldTypes.Text,
+    problemTitle: EntryFieldTypes.Text,
+    problemDescription: EntryFieldTypes.Text,
+    processTitle: EntryFieldTypes.Text,
+    processDescription: EntryFieldTypes.Text,
+    processList: EntryFieldTypes.Object,
+    resultsTitle: EntryFieldTypes.Text,
+    resultsDescription: EntryFieldTypes.Text,
+  }
+}
 
-export const contentfulClient = contentful.createClient({
-  space: import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: import.meta.env.DEV
-    ? import.meta.env.CONTENTFUL_PREVIEW_TOKEN
-    : import.meta.env.CONTENTFUL_DELIVERY_TOKEN,
-  host: import.meta.env.DEV ? "preview.contentful.com" : "cdn.contentful.com",
-});
+
+

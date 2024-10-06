@@ -158,6 +158,10 @@ body {
   padding: 5%;
 }
 
+.link {
+color: #116ee9;
+}
+
 .regular {
   font-weight: 400 !important;
 }
