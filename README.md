@@ -2,8 +2,8 @@
 https://felicia-portfolio.netlify.app/
 
 ## About me
-### Hi there~!
-Hi there,
+### Hi there!
+
 I’m Felicia, a creative software engineer.
 
 I love building web applications that blend cutting-edge technology with a seamless user experience, I have worked primarily with React, Node.js, SQL, Next.js, TypeScript, GraphQL, TypeORM, tRPC and Prisma.
