@@ -1,0 +1,121 @@
+---
+import Title from "../components/elements/Title";
+import Images from "../components/elements/Images";
+import Button from "../components/buttons/Button";
+import Body from "../components/elements/Body";
+import List from "../components/elements/List";
+import Layout from "../layouts/Layout.astro";
+
+const projectInfo = {
+  title: "AppreciateYa - Together, Let's Build a Happier, More Connected Workspace!",
+  desc: `AppreciateYa transforms workplace gratitude with easy-to-send kudos, virtual coffees, and gift cards. It promotes a positive culture by celebrating every contribution. ✨`,
+  skills: "Full Stack Web Developer",
+  year: "2024",
+  videoUrl: "/img/appreciate/appreciateYa.mp4",
+  images: [
+    { src: "/img/appreciate/appreciateYa.jpg", alt: "project image cover" },
+    { src: "/img/appreciate/AI.png", alt: "AI image cover" }
+  ]
+};
+
+const links = [
+  { title: "Try the app!", url: "https://appreciate-ya.vercel.app/" },
+  { title: "View Code", url: "https://github.com/applescan/appreciate.ya" }
+];
+
+const bodies = [
+  {
+    title: "Why is this problem valuable to address?",
+    desc: `In today's fast-paced work environment, it's easy to overlook the power of a simple "thank you" or "great job."
+    However, these small gestures of appreciation can significantly impact morale, motivation, and workplace happiness.
+    That's where AppreciateYa comes in.`
+  },
+  {
+    title: "New Feature",
+    desc: `Introducing the latest feature to spark your creativity: AI Suggestion! Now, whenever you need a dose of inspiration or just a little nudge in the right direction, our AI can craft personalized kudos for you. Whether you're celebrating a team win, recognizing a colleague's hard work, or just spreading some positivity, AI Suggestion is here to help you express your appreciation in the most impactful way. Let AI ignite your imagination and help you pen the perfect note of praise.`
+  },
+  {
+    title: "Goals",
+    desc: `I believe that appreciation should be easy, meaningful, and fun.
+    AppreciateYa is designed to be intuitive and engaging,
+    ensuring that every team member feels valued and recognized.`
+  },
+  {
+    title: "Built With",
+    desc: `T3 Stack • Next.js • Prisma • Canva • Figma • React • Tailwind CSS • GraphQL • Typescript • Supabase • NextAuth • Node.js`
+  }
+];
+
+const features = {
+  title: "Features",
+  items: [
+    "💌 Send personalized appreciation messages, whether it's a warm thank you, congratulations, or a virtual coffee or gift card.",
+    "🏆 Discover your top fans and MVPs, and make sure no one feels left out.",
+    "📊 Gain insights into the appreciation culture within your team or organization.",
+    "🤖 Meet AI Suggestion, your quick tool for crafting inspiring kudos. Express appreciation with creativity and ease."
+  ]
+};
+---
+
+<Layout title={projectInfo.title}>
+  <section class="whiteBg">
+    <div class="container">
+      <Title
+        title={projectInfo.title}
+        subtitle=""
+        descriptions={[projectInfo.desc]}
+        skills={projectInfo.skills}
+        year={projectInfo.year}
+      />
+
+      <Images
+        images={[
+          { src: projectInfo.images[0].src, alt: projectInfo.images[0].alt }
+        ]}
+      />
+      <br />
+      <video style="width: 100%; height: 100%; padding-bottom: 50px;" class="radius8" controls>
+        <source src={projectInfo.videoUrl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <br />
+      <h1 class="extraBold font25">Links:</h1>
+      <div class="flexNullCenter">
+        {links.map(link => (
+          <div style="width: 190px; margin-right: 15px;">
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <Button title={link.title} border={false} />
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {bodies.map(body => (
+        <Body
+          title={body.title}
+          desc={body.desc}
+        />
+      ))}
+
+      <Images
+        images={[
+          { src: projectInfo.images[1].src, alt: projectInfo.images[1].alt }
+        ]}
+      />
+
+      <Body title="App" desc=""/>
+      <p>
+        Visit <a class="purpleColor" href="https://appreciate-ya.vercel.app/" target="_blank">https://appreciate-ya.vercel.app/</a> to access the web application.
+      </p>
+
+      <List title={features.title} items={features.items} />
+
+      <div style="width: 150px; padding-top: 100px;">
+        <a href="/#projects">
+          <Button title="Back" border={false} />
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
