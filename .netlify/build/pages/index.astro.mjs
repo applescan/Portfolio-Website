@@ -4,7 +4,7 @@ import 'html-escaper';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import 'react';
 /* empty css                                 */
-import { B as Button, $ as $$Layout } from '../chunks/Layout_Dvrv0g8i.mjs';
+import { B as Button, $ as $$Layout } from '../chunks/Layout_7yXHhCp-.mjs';
 import contentful from 'contentful';
 export { renderers } from '../renderers.mjs';
 
@@ -191,7 +191,10 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
     text: item.fields.period,
     list: isStringArray(item.fields.description) ? item.fields.description : []
   }));
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Felicia's Portfolio Website" }, { "default": ($$result2) => renderTemplate`${heroItem && renderTemplate`${renderComponent($$result2, "Profile", Profile, { "title": heroItem.title, "subTitle": heroItem.subTitle, "desc": heroItem.desc })}`}${aboutItem && renderTemplate`${renderComponent($$result2, "About", About, { "title": aboutItem.title, "desc": aboutItem.desc })}`}${projectEntries.items.length > 0 && renderTemplate`${renderComponent($$result2, "Projects", Projects, { "projectItems": projectEntries.items.slice().reverse().map((item) => ({
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Felicia's Portfolio Website" }, { "default": ($$result2) => renderTemplate`${heroItem && renderTemplate`${renderComponent($$result2, "Profile", Profile, { "title": heroItem.title, "subTitle": heroItem.subTitle, "desc": heroItem.desc })}`}${aboutItem && renderTemplate`${renderComponent($$result2, "About", About, { "title": aboutItem.title, "desc": aboutItem.desc })}`}${projectEntries.items.length > 0 && renderTemplate`${renderComponent($$result2, "Projects", Projects, { "projectItems": [
+    ...projectEntries.items.slice(1),
+    projectEntries.items[0]
+  ].reverse().map((item) => ({
     img: item.fields.img,
     title: item.fields.title,
     text: item.fields.description,

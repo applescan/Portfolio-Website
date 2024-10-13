@@ -1,8 +1,8 @@
 import { c as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_D07P6R4w.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { T as Title, I as Images, L as List, B as Body } from '../chunks/List_B7R8-9Ls.mjs';
-import { B as Button, $ as $$Layout } from '../chunks/Layout_Dvrv0g8i.mjs';
+import { T as Title, I as Images, L as List, B as Body } from '../chunks/List_rWYf4iXP.mjs';
+import { B as Button, $ as $$Layout } from '../chunks/Layout_7yXHhCp-.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Hikitia = createComponent(($$result, $$props, $$slots) => {

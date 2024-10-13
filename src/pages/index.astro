@@ -87,8 +87,10 @@ const educationItems = educationEntries.items.map((item) => ({
   {
     projectEntries.items.length > 0 && (
       <Projects
-          projectItems={projectEntries.items
-          .slice()
+        projectItems={[
+          ...projectEntries.items.slice(1),
+          projectEntries.items[0],
+        ]
           .reverse()
           .map((item) => ({
             img: item.fields.img,
@@ -99,7 +101,6 @@ const educationItems = educationEntries.items.map((item) => ({
       />
     )
   }
-
   {
     experienceItems.length > 0 && (
       <Experience
