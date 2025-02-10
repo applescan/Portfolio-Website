@@ -23,6 +23,7 @@ const aboutEntries = await contentfulClient.getEntries<AboutMe>({
 
 const projectEntries = await contentfulClient.getEntries<ProjectCard>({
   content_type: "projectCard",
+  order: ["-sys.createdAt"],
 });
 
 const experienceEntries = await contentfulClient.getEntries<WorkExperience>({
@@ -85,24 +86,20 @@ const educationItems = educationEntries.items.map((item) => ({
   {aboutItem && <About title={aboutItem.title} desc={aboutItem.desc} />}
 
   {
-    projectEntries.items.length > 0 && (
+    projectEntries?.items?.length > 0 && (
       <Projects
-        projectItems={[
-          ...projectEntries.items.slice(1),
-          projectEntries.items[0],
-        ]
-          .reverse()
-          .map((item) => ({
-            img: item.fields.img,
-            title: item.fields.title,
-            text: item.fields.description,
-            link: item.fields.link,
-          }))}
+        projectItems={projectEntries.items.map((item) => ({
+          img: item.fields.img,
+          title: item.fields.title,
+          text: item.fields.description,
+          link: item.fields.link,
+        }))}
       />
     )
   }
+
   {
-    experienceItems.length > 0 && (
+    experienceItems?.length > 0 && (
       <Experience
         experienceItems={experienceItems}
         educationItems={educationItems}

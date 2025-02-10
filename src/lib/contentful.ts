@@ -9,49 +9,46 @@ export const contentfulClient = contentful.createClient({
 });
 
 export interface AboutMe {
-  contentTypeId: "aboutMe",
+  contentTypeId: "aboutMe";
   fields: {
-    title: EntryFieldTypes.Text
-    description: EntryFieldTypes.Text,
-  }
+    title: EntryFieldTypes.Text;
+    description: EntryFieldTypes.Text;
+  };
 }
 
 export interface Education {
-  contentTypeId: "education",
+  contentTypeId: "education";
   fields: {
-    title: EntryFieldTypes.Text
-    period: EntryFieldTypes.Text
-    description: EntryFieldTypes.Object,
-  }
+    title: EntryFieldTypes.Text;
+    period: EntryFieldTypes.Text;
+    description: EntryFieldTypes.Object;
+  };
 }
 
 export interface WorkExperience {
-  contentTypeId: "workExperience",
+  contentTypeId: "workExperience";
   fields: {
-    title: EntryFieldTypes.Text
-    period: EntryFieldTypes.Text
-    descriptionList: EntryFieldTypes.Object,
-  }
+    title: EntryFieldTypes.Text;
+    period: EntryFieldTypes.Text;
+    descriptionList: EntryFieldTypes.Object;
+  };
 }
 
 export interface ProjectCard {
-  contentTypeId: "projectCard",
+  contentTypeId: "projectCard";
   fields: {
-    title: EntryFieldTypes.Text
-    description: EntryFieldTypes.Text,
-    img: EntryFieldTypes.Text,
-    link: EntryFieldTypes.Text
-  }
+    title: EntryFieldTypes.Text;
+    description: EntryFieldTypes.Text;
+    img: EntryFieldTypes.Text;
+    link: EntryFieldTypes.Text;
+  };
 }
 
 export interface Hero {
-  contentTypeId: "hero",
+  contentTypeId: "hero";
   fields: {
-    title: EntryFieldTypes.Text,
-    subTitle: EntryFieldTypes.Text
-    description: EntryFieldTypes.Text,
-  }
+    title: EntryFieldTypes.Text;
+    subTitle: EntryFieldTypes.Text;
+    description: EntryFieldTypes.Text;
+  };
 }
-
-
-
