@@ -1,5 +1,5 @@
 import React, { type FC } from "react";
-import './ProjectBox.css';
+import "./ProjectBox.css";
 
 type ProjectBoxProps = {
   img: string;
@@ -18,6 +18,6 @@ const ProjectBox: FC<ProjectBoxProps> = ({ img, title, text, link }) => {
       <p className="font13">{text}</p>
     </div>
   );
-}
+};
 
 export default ProjectBox;

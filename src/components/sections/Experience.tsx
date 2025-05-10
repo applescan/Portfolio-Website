@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../elements/Card";
-import './Experience.css';
+import "./Experience.css";
 
 interface ExperienceItem {
   title: string;
@@ -13,7 +13,10 @@ interface ExperienceProps {
   educationItems: ExperienceItem[];
 }
 
-export default function Experience({ experienceItems, educationItems }: ExperienceProps) {
+export default function Experience({
+  experienceItems,
+  educationItems,
+}: ExperienceProps) {
   return (
     <div className="darkBg">
       <section id="resume" className="experience-wrapper">

@@ -6,7 +6,9 @@
   outline: none;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   border-radius: 16px;
 }
 
@@ -16,11 +18,11 @@
 }
 
 .button.border:hover {
-  background-color: #D3E6FF;
+  background-color: #d3e6ff;
   color: #6c9ffb;
 }
 
 .button:hover {
-  background-color: #D3E6FF;
+  background-color: #d3e6ff;
   border-color: #6c9ffb;
 }

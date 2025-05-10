@@ -1,5 +1,5 @@
-import React from 'react';
-import './Title.css';
+import React from "react";
+import "./Title.css";
 
 interface TitleProps {
   title: string;
@@ -9,14 +9,22 @@ interface TitleProps {
   year: string;
 }
 
-const Title: React.FC<TitleProps> = ({ title, subtitle, descriptions, skills, year }) => {
+const Title: React.FC<TitleProps> = ({
+  title,
+  subtitle,
+  descriptions,
+  skills,
+  year,
+}) => {
   return (
     <div className="title-container">
       <h1 className="font30 bottom-spacing extraBold">{title}</h1>
       <h2 className="font20 bottom-spacing semiBold">{subtitle}</h2>
 
       {descriptions.map((desc, index) => (
-        <p className="bottom-spacing" key={index}>{desc}</p>
+        <p className="bottom-spacing" key={index}>
+          {desc}
+        </p>
       ))}
 
       <div className="title-wrapper">

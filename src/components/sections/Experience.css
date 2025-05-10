@@ -37,7 +37,8 @@
   .tables-wrapper {
     flex-direction: column;
   }
-  .table-box, .table-box-large {
+  .table-box,
+  .table-box-large {
     width: 100%;
     margin: 0 auto;
   }

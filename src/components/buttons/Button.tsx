@@ -1,5 +1,5 @@
-import React, { type FC } from 'react';
-import './Button.css';
+import React, { type FC } from "react";
+import "./Button.css";
 
 interface ButtonProps {
   title: string;
@@ -8,13 +8,10 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({ title, action, border = false }) => {
-  const buttonClass = border ? 'button border' : 'button';
+  const buttonClass = border ? "button border" : "button";
 
   return (
-    <button
-      className={buttonClass}
-      onClick={action}
-    >
+    <button className={buttonClass} onClick={action}>
       {title}
     </button>
   );

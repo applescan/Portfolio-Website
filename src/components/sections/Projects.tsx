@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectBox from "../elements/ProjectBox";
-import './Projects.css';
+import "./Projects.css";
 
 interface ProjectItem {
   img: string;

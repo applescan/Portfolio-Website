@@ -1,5 +1,5 @@
-import React from 'react';
-import './List.css';
+import React from "react";
+import "./List.css";
 
 interface ListProps {
   title: string;
@@ -14,7 +14,9 @@ const List: React.FC<ListProps> = ({ title, desc, items }) => {
       <h4 className="description">{desc}</h4>
       <ol className="list-items">
         {items.map((item, index) => (
-          <li key={index}><p>✦ {item}</p></li>
+          <li key={index}>
+            <p>✦ {item}</p>
+          </li>
         ))}
       </ol>
     </div>

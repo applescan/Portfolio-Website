@@ -1,5 +1,5 @@
-import React, { type FC } from 'react';
-import './About.css'
+import React, { type FC } from "react";
+import "./About.css";
 
 type AboutProps = {
   title: string;
@@ -12,10 +12,13 @@ const About: FC<AboutProps> = ({ title, desc }) => {
       <section id="about" className="about">
         <div className="headerInfo">
           <h1 className="font40 bold whiteColor">{title}</h1>
-          <div className="whiteColor" dangerouslySetInnerHTML={{ __html: desc }} />
+          <div
+            className="whiteColor"
+            dangerouslySetInnerHTML={{ __html: desc }}
+          />
         </div>
       </section>
     </div>
   );
-}
+};
 export default About;

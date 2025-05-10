@@ -1,5 +1,5 @@
-import React from 'react';
-import './Images.css';
+import React from "react";
+import "./Images.css";
 
 interface ImageData {
   src: string;
