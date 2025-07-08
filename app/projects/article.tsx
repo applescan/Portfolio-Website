@@ -23,7 +23,7 @@ export const Article: React.FC<Props> = ({ project }) => {
             )}
           </span>
         </div>
-        {project.thumbnail && (
+        {/* {project.thumbnail && (
           <div className="relative w-full h-48 overflow-hidden rounded-lg mb-4">
             <Image
               src={project.thumbnail}
@@ -33,7 +33,7 @@ export const Article: React.FC<Props> = ({ project }) => {
               className="transition-transform duration-300 group-hover:scale-105"
             />
           </div>
-        )}
+        )} */}
         <h2 className="z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
           {project.title}
         </h2>
