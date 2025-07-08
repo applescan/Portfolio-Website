@@ -80,7 +80,7 @@ export default function RootLayout({
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
         }`}
       >
-        {positions.map((pos, i) => (
+        {/* {positions.map((pos, i) => (
           <div
             key={i}
             className="absolute z-0 pointer-events-none animate-jelly overflow-hidden"
@@ -98,7 +98,7 @@ export default function RootLayout({
           >
             <JellyFish />
           </div>
-        ))}
+        ))} */}
         {children}
       </body>
     </html>
