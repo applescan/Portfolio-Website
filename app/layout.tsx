@@ -4,6 +4,7 @@ import LocalFont from "@next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 import JellyFish from "./components/jellyFish";
+import JellyFishSmall from "./components/jellyFishSmall";
 
 export const metadata: Metadata = {
   title: {
@@ -65,6 +66,13 @@ const positions = [
   { top: "75%", left: "0%", scale: 1.7, opacity: 0.1 },
 ];
 
+const shuffled = [...positions]
+  .map((pos) => ({ ...pos, rand: Math.random() }))
+  .sort((a, b) => a.rand - b.rand);
+
+const jellyFishSmallIndices = shuffled.slice(0, 3).map((_, i) => i);
+const jellyFishIndices = shuffled.slice(3, 5).map((_, i) => i);
+
 export default function RootLayout({
   children,
 }: {
@@ -80,25 +88,28 @@ export default function RootLayout({
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
         }`}
       >
-        {/* {positions.map((pos, i) => (
-          <div
-            key={i}
-            className="absolute z-0 pointer-events-none animate-jelly overflow-hidden"
-            style={{
-              top: pos.top,
-              left: pos.left,
-              opacity: pos.opacity,
-              scale: pos.scale,
-              mixBlendMode: "screen",
-              filter: "blur(1px)",
-              willChange: "transform, opacity",
-              animationDelay: `${i * 3}s`,
-              animationDuration: `${12 + i * 2}s`,
-            }}
-          >
-            <JellyFish />
-          </div>
-        ))} */}
+        <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+          {shuffled.map((pos, i) => (
+            <div
+              key={i}
+              className="absolute animate-jelly"
+              style={{
+                top: pos.top,
+                left: pos.left,
+                opacity: pos.opacity,
+                scale: pos.scale,
+                mixBlendMode: "lighten",
+                filter: "blur(1px)",
+                willChange: "transform, opacity",
+                animationDelay: `${i * 3}s`,
+                animationDuration: `${12 + i * 2}s`,
+              }}
+            >
+              {jellyFishSmallIndices.includes(i) && <JellyFishSmall />}
+              {jellyFishIndices.includes(i) && <JellyFish />}
+            </div>
+          ))}
+        </div>
         {children}
       </body>
     </html>

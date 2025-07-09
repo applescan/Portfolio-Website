@@ -22,10 +22,11 @@ export default function JellyFish({ className, style }: JellyFishProps) {
       canvas,
       antialias: true,
       powerPreference: "high-performance",
+      alpha: true,
     });
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x000000);
+    scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(
       45,

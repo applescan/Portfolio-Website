@@ -8,9 +8,13 @@ import { Article } from "./article";
 export const revalidate = 60;
 
 export default async function ProjectsPage() {
-  const top1 = allProjects.find((project) => project.slug === "mi-casa")!;
-  const top2 = allProjects.find((project) => project.slug === "sarana")!;
-  const top3 = allProjects.find((project) => project.slug === "appreciateya")!;
+  const top1 = allProjects.find(
+    (project) => project.slug === "diamond-valley"
+  )!;
+  const top2 = allProjects.find(
+    (project) => project.slug === "tokyo-game-show"
+  )!;
+  const top3 = allProjects.find((project) => project.slug === "mi-casa")!;
 
   const others = allProjects
     .filter((p) => p.published)
@@ -37,13 +41,13 @@ export default async function ProjectsPage() {
             Projects
           </h2>
           <p className="mt-4 text-zinc-400">
-            Some of the projects are from work and some are on my own time.
+            A blend of client work and side adventures that push my skills
+            further.
           </p>
         </div>
 
         <div className="w-full h-px bg-zinc-800" />
 
-        {/* TOP 3 PROJECTS */}
         <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
           {topProjects.map((project) => (
             <Card key={project.slug}>
@@ -54,7 +58,6 @@ export default async function ProjectsPage() {
 
         <div className="hidden w-full h-px md:block bg-zinc-800" />
 
-        {/* OTHER PROJECTS */}
         <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
           <div className="grid grid-cols-1 gap-4">
             {others

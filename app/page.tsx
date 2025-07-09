@@ -36,7 +36,7 @@ export default function Home() {
       </h1>
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-      <div className="my-16 text-center animate-fade-in">
+      <div className="m-4 text-center animate-fade-in">
         <h2 className="text-sm text-zinc-500">
           Developer based in Auckland, New Zealand. I primarily work with React,
           Next.js, Angular 19, Node.js, TypeScript, GraphQL, Tailwind CSS, and
