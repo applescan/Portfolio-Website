@@ -88,7 +88,7 @@ export default function RootLayout({
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
         }`}
       >
-        <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+        <div className="absolute left-0 inset-0 overflow-hidden z-0 pointer-events-none">
           {shuffled.map((pos, i) => (
             <div
               key={i}
