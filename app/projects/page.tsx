@@ -9,12 +9,12 @@ export const revalidate = 60;
 
 export default async function ProjectsPage() {
   const top1 = allProjects.find(
-    (project) => project.slug === "diamond-valley"
+    (project) => project.slug === "whazup"
   )!;
   const top2 = allProjects.find(
-    (project) => project.slug === "tokyo-game-show"
+    (project) => project.slug === "mi-casa"
   )!;
-  const top3 = allProjects.find((project) => project.slug === "mi-casa")!;
+  const top3 = allProjects.find((project) => project.slug === "diamond-valley")!;
 
   const others = allProjects
     .filter((p) => p.published)
@@ -49,42 +49,42 @@ export default async function ProjectsPage() {
         <div className="w-full h-px bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-          {topProjects.map((project) => (
-            <Card key={project.slug}>
-              <Article project={project} />
+          { topProjects.map((project) => (
+            <Card key={ project.slug }>
+              <Article project={ project } />
             </Card>
-          ))}
+          )) }
         </div>
 
         <div className="hidden w-full h-px md:block bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
           <div className="grid grid-cols-1 gap-4">
-            {others
+            { others
               .filter((_, i) => i % 3 === 0)
               .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} />
+                <Card key={ project.slug }>
+                  <Article project={ project } />
                 </Card>
-              ))}
+              )) }
           </div>
           <div className="grid grid-cols-1 gap-4">
-            {others
+            { others
               .filter((_, i) => i % 3 === 1)
               .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} />
+                <Card key={ project.slug }>
+                  <Article project={ project } />
                 </Card>
-              ))}
+              )) }
           </div>
           <div className="grid grid-cols-1 gap-4">
-            {others
+            { others
               .filter((_, i) => i % 3 === 2)
               .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} />
+                <Card key={ project.slug }>
+                  <Article project={ project } />
                 </Card>
-              ))}
+              )) }
           </div>
         </div>
       </div>

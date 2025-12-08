@@ -10,13 +10,13 @@ export default function AboutPage() {
       <Navigation />
 
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        {/* Header */}
+        {/* Header */ }
         <div className="flex flex-col md:flex-row items-center gap-10 mb-10">
           <img
             src="/favicon.png"
             alt="Felicia Fel"
-            width={160}
-            height={160}
+            width={ 160 }
+            height={ 160 }
             className="rounded-full object-cover border border-zinc-800"
           />
           <div>
@@ -34,7 +34,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Work & Education Sections */}
+        {/* Work & Education Sections */ }
         <div className="flex flex-col gap-10">
           <Card>
             <div className="p-6">
@@ -48,10 +48,10 @@ export default function AboutPage() {
                 <li>
                   <strong>PHQ – Intermediate Developer</strong>
                   <br />
-                  <span className="text-sm">July 2024 – Present</span>
+                  <span className="text-sm">July 2024 – December 2025</span>
                   <br />
                   Built interactive experiences for Google campaigns including
-                  Diamond Valley (KR, JP, TW) and Diamond Castle @ Tokyo Game
+                  Diamond Valley (KR, JP, TW) and Diamond Castle & Diamond Spaceship @ Tokyo Game
                   Show using Angular, PixiJS, and Material UI.
                 </li>
                 <li>
