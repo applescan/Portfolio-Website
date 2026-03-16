@@ -7,8 +7,9 @@ import projects__miCasaMdx from './projects__mi-casa.mdx.json' assert { type: 'j
 import projects__mixtapeMeMdx from './projects__mixtape-me.mdx.json' assert { type: 'json' }
 import projects__nzLocumMdx from './projects__nz-locum.mdx.json' assert { type: 'json' }
 import projects__saranaMdx from './projects__sarana.mdx.json' assert { type: 'json' }
+import projects__tokyoGameShow_2025Mdx from './projects__tokyo-game-show-2025.mdx.json' assert { type: 'json' }
 import projects__tokyoGameShowMdx from './projects__tokyo-game-show.mdx.json' assert { type: 'json' }
 import projects__whatToEatMdx from './projects__what-to-eat.mdx.json' assert { type: 'json' }
 import projects__whazupMdx from './projects__whazup.mdx.json' assert { type: 'json' }
 
-export const allProjects = [projects__appreciateyaMdx, projects__diamondValleyMdx, projects__hikitiaMdx, projects__miCasaMdx, projects__mixtapeMeMdx, projects__nzLocumMdx, projects__saranaMdx, projects__tokyoGameShowMdx, projects__whatToEatMdx, projects__whazupMdx]
+export const allProjects = [projects__appreciateyaMdx, projects__diamondValleyMdx, projects__hikitiaMdx, projects__miCasaMdx, projects__mixtapeMeMdx, projects__nzLocumMdx, projects__saranaMdx, projects__tokyoGameShow_2025Mdx, projects__tokyoGameShowMdx, projects__whatToEatMdx, projects__whazupMdx]
