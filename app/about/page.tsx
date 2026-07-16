@@ -1,151 +1,140 @@
-"use client";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { SiteFooter } from "../components/site-footer";
+import { SiteHeader } from "../components/site-header";
+import { capabilities, education, experience, facts } from "../portfolio-data";
 
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
-import { Briefcase, GraduationCap } from "lucide-react";
+export const metadata: Metadata = {
+	title: "About",
+	description: "Felicia Fel's path from visual design and VFX to creative full-stack engineering.",
+};
 
 export default function AboutPage() {
 	return (
-		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 min-h-screen relative pb-16">
-			<Navigation />
-
-			<div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-				{/* Header */}
-				<div className="flex flex-col md:flex-row items-center gap-10 mb-10">
-					<img
-						src="/favicon.png"
-						alt="Felicia Fel"
-						width={160}
-						height={160}
-						className="rounded-full object-cover border border-zinc-800"
-					/>
-					<div>
-						<h1 className="text-4xl font-bold text-zinc-100 mb-4 text-center md:text-left">
-							Hi, I'm Felicia 👋
-						</h1>
-						<p className="text-zinc-400 leading-relaxed text-center md:text-left">
-							I’m a creative developer with a strong foundation in frontend
-							engineering and full-stack development. I work with React,
-							Next.js, Angular, Vue/Nuxt, Node.js, Express, TypeScript, GraphQL,
-							PostgreSQL, Redis, Docker, and GCP, blending technical depth with
-							thoughtful design to craft engaging and performant user
-							experiences. I’ve worked with startups and global brands like
-							Google, where exposure to their engineering standards has shaped
-							my focus on clean, scalable, and high-quality code.
+		<>
+			<SiteHeader />
+			<main className="about-page">
+				<section className="about-page-hero page-shell">
+					<div className="about-page-title">
+						<p className="kicker">PERSONNEL FILE / FELICIA FEL</p>
+						<h1>A visual thinker who learned to ship the whole thing.</h1>
+						<p>
+							I&apos;m a creative full-stack engineer in Auckland, combining design
+							judgement with production engineering to make useful, expressive web
+							experiences.
 						</p>
 					</div>
-				</div>
-
-				{/* Work & Education Sections */}
-				<div className="flex flex-col gap-10">
-					<Card>
-						<div className="p-6">
-							<div className="flex items-center gap-2 mb-4">
-								<Briefcase className="text-zinc-100 w-5 h-5" />
-								<h2 className="text-xl font-semibold text-zinc-100">
-									Work Experience
-								</h2>
-							</div>
-							<ul className="text-zinc-400 space-y-6">
-								<li>
-									<strong>Youdooh – Full Stack Engineer</strong>
-									<br />
-									<span className="text-sm"> December 2025 - Current</span>
-									<br />
-									Built and optimise full-stack features for a cloud-native DOOH
-									platform using Nuxt/Vue, TypeScript, Node.js, Express, and
-									PostgreSQL.
-									<br />
-									Working alongside the founders and Lead Engineer to
-									prioritise, design, implement, and test new product features.
-									<br />
-									Manage CI/CD pipelines, automated testing, and code quality
-									processes to support a scalable, high-performing platform.
-								</li>
-								<li>
-									<strong>PHQ – Intermediate Developer</strong>
-									<br />
-									<span className="text-sm">July 2024 – December 2025</span>
-									<br />
-									Built interactive experiences for Google campaigns including
-									Diamond Valley (KR, JP, TW) and Diamond Castle & Diamond
-									Spaceship @ Tokyo Game Show using Angular, PixiJS, and
-									Material UI.
-								</li>
-								<li>
-									<strong>Generate Zero – Frontend Engineer</strong>
-									<br />
-									<span className="text-sm">Feb 2023 – Jun 2024</span>
-									<br />
-									Built MVP for carbon emission platform with Next.js, GraphQL,
-									Tailwind, and ShadCN UI. Led dashboard UX and worked with
-									clients like Westpac and Kiwibank.
-								</li>
-								<li>
-									<strong>
-										Deltapath – Visual Designer → Senior Visual Designer
-									</strong>
-									<br />
-									<span className="text-sm">Oct 2019 – Jun 2022</span>
-									<br />
-									Website design & development, UI/UX for products, social media
-									graphic content, company video editing, branding, and logo
-									design.
-								</li>
-							</ul>
+					<div className="about-file-photo">
+						<div className="file-tab">ID: FF-2018-∞</div>
+						<img src="/favicon.png" alt="Illustrated portrait of Felicia Fel" />
+						<div className="photo-caption">
+							<span>BASE</span> Auckland, Aotearoa NZ
+							<span>MODE</span> Coffee × Engineering
 						</div>
-					</Card>
+					</div>
+				</section>
 
-					<Card>
-						<div className="p-6">
-							<div className="flex items-center gap-2 mb-4">
-								<GraduationCap className="text-zinc-100 w-5 h-5" />
-								<h2 className="text-xl font-semibold text-zinc-100">
-									Education
-								</h2>
-							</div>
-							<ul className="text-zinc-400 space-y-6">
-								<li>
-									<strong>AcademyEX</strong>
-									<br />
-									Disruptive Technologies Micro-credential (NZQA Level 8)
-									<br />
-									<span className="text-sm">Oct 2023</span>
-								</li>
-								<li>
-									<strong>AUT x Institute of Data</strong>
-									<br />
-									Certificate in Software Engineering
-									<br />
-									<span className="text-sm">Jan 2023</span>
-								</li>
-								<li>
-									<strong>UX Design Institute</strong>
-									<br />
-									Professional Diploma in UX Design (w/ Glasgow Caledonian
-									University)
-									<br />
-									<span className="text-sm">Dec 2022</span>
-								</li>
-								<li>
-									<strong>Future Skills Academy</strong>
-									<br />
-									Certificate in Intermediate Software Development, L5
-									<br />
-									<span className="text-sm">Sept 2022</span>
-								</li>
-								<li>
-									<strong>Media Design School</strong>
-									<br />
-									Bachelor of Art and Design – 3D Animation & VFX
-									<br />
-									<span className="text-sm">Graduated 2018</span>
-								</li>
-							</ul>
+				<section className="origin-section page-shell">
+					<div>
+						<p className="kicker">01 / ORIGIN STORY</p>
+						<h2>Not a pivot. More like collecting extra tools.</h2>
+					</div>
+					<div className="origin-copy">
+						<p>
+							My career began in visual design after studying 3D animation and VFX.
+							Designing websites and products made me increasingly curious about the
+							machinery underneath them, so I learned to build it.
+						</p>
+						<p>
+							Today I work across Vue/Nuxt, React/Next.js, Angular, Node.js,
+							TypeScript, PostgreSQL, GraphQL, Redis, Docker, and cloud tooling. I
+							care less about collecting framework names than choosing the right
+							parts and making them hold up in production.
+						</p>
+						<p>
+							That mixed background helps me see both halves of a product: how it is
+							structured and how it feels. I like being close to the whole process,
+							from a rough conversation through implementation, testing, and release.
+						</p>
+					</div>
+				</section>
+
+				<section className="capability-section">
+					<div className="page-shell capability-grid">
+						<div>
+							<p className="kicker">02 / OPERATING RANGE</p>
+							<h2>Engineering, end to end.</h2>
+							<p className="capability-intro">
+								My scope covers technical delivery across frontend architecture,
+								backend systems, data, testing, CI/CD, and cloud deployment.
+							</p>
 						</div>
-					</Card>
-				</div>
-			</div>
-		</div>
+						<ol>
+							{ capabilities.map((capability, index) => (
+								<li key={ capability }>
+									<span>0{ index + 1 }</span> { capability }
+								</li>
+							)) }
+						</ol>
+					</div>
+				</section>
+
+				<section className="career-section page-shell">
+					<div className="section-heading compact">
+						<div>
+							<p className="kicker">03 / FIELD HISTORY</p>
+							<h2>Where I&apos;ve been useful.</h2>
+						</div>
+					</div>
+					<div className="timeline">
+						{ experience.map((item) => (
+							<article key={ item.company }>
+								<time>{ item.period }</time>
+								<div>
+									<h3>{ item.company }</h3>
+									<p>{ item.role }</p>
+								</div>
+								<p>{ item.detail }</p>
+							</article>
+						)) }
+					</div>
+				</section>
+
+				<section className="study-section page-shell">
+					<div>
+						<p className="kicker">04 / FORMAL DOWNLOADS</p>
+						<h2>Education</h2>
+					</div>
+					<ul>
+						{ education.map((item, index) => (
+							<li key={ item }>
+								<span>{ String(index + 1).padStart(2, "0") }</span>{ item }
+							</li>
+						)) }
+					</ul>
+				</section>
+
+				<section className="facts-section page-shell about-facts">
+					<div className="section-heading compact">
+						<div>
+							<p className="kicker">05 / OFF THE CLOCK</p>
+							<h2>The human details.</h2>
+						</div>
+					</div>
+					<div className="fact-grid">
+						{ facts.slice(4).map((fact) => (
+							<article key={ fact.marker }>
+								<h3>{ fact.title }</h3>
+								<p>{ fact.text }</p>
+							</article>
+						)) }
+					</div>
+					<Link className="primary-button about-work-link" href="/projects">
+						See what all of that became <span aria-hidden="true">↗</span>
+					</Link>
+				</section>
+			</main>
+			<SiteFooter />
+		</>
 	);
 }

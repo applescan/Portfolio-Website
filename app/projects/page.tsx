@@ -1,91 +1,58 @@
-import Link from "next/link";
-import React from "react";
+import type { Metadata } from "next";
 import { allProjects } from "contentlayer/generated";
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
-import { Article } from "./article";
+import { ProjectCard } from "../components/project-card";
+import { SiteFooter } from "../components/site-footer";
+import { SiteHeader } from "../components/site-header";
+import { projectDetails } from "../portfolio-data";
 
-export const revalidate = 60;
+export const metadata: Metadata = {
+	title: "Project Archive",
+	description: "Software products, interactive campaigns, and engineering experiments by Felicia Fel.",
+};
 
-export default async function ProjectsPage() {
-	const top1 = allProjects.find((project) => project.slug === "whazup")!;
-	const top2 = allProjects.find((project) => project.slug === "tokyo-game-show-2025")!;
-	const top3 = allProjects.find(
-		(project) => project.slug === "mi-casa",
-	)!;
+function getCaseNumber(slug: string) {
+	const code = projectDetails[slug]?.code;
+	const match = code?.match(/\d+/);
+	return match ? Number(match[0]) : Number.MAX_SAFE_INTEGER;
+}
 
-	const others = allProjects
-		.filter((p) => p.published)
-		.filter(
-			(project) =>
-				project.slug !== top1.slug &&
-				project.slug !== top2.slug &&
-				project.slug !== top3.slug,
-		)
-		.sort(
-			(a, b) =>
-				new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-				new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-		);
+export default function ProjectsPage() {
+	const projects = allProjects
+		.filter((project) => project.published)
+		.sort((a, b) => {
+			const caseOrder = getCaseNumber(a.slug) - getCaseNumber(b.slug);
+			if (caseOrder !== 0) return caseOrder;
 
-	const topProjects = [top1, top2, top3];
+			const aTime = a.date ? new Date(a.date).getTime() : 0;
+			const bTime = b.date ? new Date(b.date).getTime() : 0;
+			return bTime - aTime;
+		});
 
 	return (
-		<div className="relative pb-16">
-			<Navigation />
-			<div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-				<div className="max-w-2xl mx-auto lg:mx-0">
-					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-						Projects
-					</h2>
-					<p className="mt-4 text-zinc-400">
-						A blend of client work and side adventures that push my skills
-						further.
-					</p>
-				</div>
-
-				<div className="w-full h-px bg-zinc-800" />
-
-				<div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-					{ topProjects.map((project) => (
-						<Card key={ project.slug }>
-							<Article project={ project } />
-						</Card>
-					)) }
-				</div>
-
-				<div className="hidden w-full h-px md:block bg-zinc-800" />
-
-				<div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-					<div className="grid grid-cols-1 gap-4">
-						{ others
-							.filter((_, i) => i % 3 === 0)
-							.map((project) => (
-								<Card key={ project.slug }>
-									<Article project={ project } />
-								</Card>
-							)) }
+		<>
+			<SiteHeader />
+			<main className="archive-page">
+				<section className="archive-hero page-shell">
+					<div>
+						<p className="kicker">PROJECT ARCHIVE / {projects.length} FILES</p>
+						<h1>Products I&apos;ve engineered, built, and shipped.</h1>
 					</div>
-					<div className="grid grid-cols-1 gap-4">
-						{ others
-							.filter((_, i) => i % 3 === 1)
-							.map((project) => (
-								<Card key={ project.slug }>
-									<Article project={ project } />
-								</Card>
-							)) }
-					</div>
-					<div className="grid grid-cols-1 gap-4">
-						{ others
-							.filter((_, i) => i % 3 === 2)
-							.map((project) => (
-								<Card key={ project.slug }>
-									<Article project={ project } />
-								</Card>
-							)) }
-					</div>
-				</div>
-			</div>
-		</div>
+					<aside>
+						<span>THE EVIDENCE ROOM</span>
+						<p>
+							Client work sits beside personal experiments here. The common thread is
+							care: for the user, the system, and the detail people remember.
+						</p>
+					</aside>
+				</section>
+
+				<section className="projects-archive page-shell" aria-label="All projects">
+					{projects.map((project, index) => (
+						<ProjectCard key={project.slug} project={project} priority={index < 2} />
+					))}
+				</section>
+			</main>
+			<SiteFooter />
+		</>
 	);
 }

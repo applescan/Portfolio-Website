@@ -1,17 +1,14 @@
-## Portfolio-Website
+# Felicia Fel - Portfolio
 
-https://felicia-portfolio.netlify.app/
+Portfolio and project archive for Felicia Fel, a creative full-stack engineer based in Auckland, New Zealand.
 
-## About me
+## Development
 
-### Hi there!
+```bash
+npm install
+npm run dev
+```
 
-I’m Felicia, a creative software engineer.
+Run `npm run build` to validate TypeScript and generate the static site in `out/`.
 
-I love building web applications that blend cutting-edge technology with a seamless user experience, I have worked primarily with React, Node.js, SQL, Next.js, TypeScript, GraphQL, TypeORM, tRPC and Prisma.
-
-I stay up-to-date with the latest industry trends and best practices through continuous learning, and attending webinars, conferences, and workshops.
-
-During my leisure time, I enjoy drawing, immersing myself in comics, or exploring the outdoors through hiking.
-
-Are you all set to work on some thrilling projects with me? Let's collaborate and create something fun!
+Project case studies live in `content/projects/`. Shared project labels and portfolio facts are maintained in `app/portfolio-data.ts`.

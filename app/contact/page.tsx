@@ -1,64 +1,78 @@
-"use client";
-import { Github, Mail, Instagram, Linkedin } from "lucide-react";
-import Link from "next/link";
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
+import type { Metadata } from "next";
+import { SiteHeader } from "../components/site-header";
 
-const socials = [
+export const metadata: Metadata = {
+	title: "Contact",
+	description: "Contact Felicia Fel about product engineering, creative development, and thoughtful web work.",
+};
+
+const channels = [
 	{
-		icon: <Linkedin size={20} />,
-		href: "https://www.linkedin.com/in/felicia-fel/",
-		label: "LinkedIn",
-		handle: "Felicia Fel",
-	},
-	{
-		icon: <Mail size={20} />,
-		href: "mailto:feliu.ren@gmail.com",
+		index: "01",
 		label: "Email",
 		handle: "feliu.ren@gmail.com",
+		href: "mailto:feliu.ren@gmail.com",
+		note: "Best for projects, roles, and detailed hellos.",
 	},
 	{
-		icon: <Github size={20} />,
-		href: "https://github.com/applescan",
+		index: "02",
+		label: "LinkedIn",
+		handle: "Felicia Fel",
+		href: "https://www.linkedin.com/in/felicia-fel/",
+		note: "Professional history and shorter hellos.",
+	},
+	{
+		index: "03",
 		label: "GitHub",
-		handle: "applescan",
+		handle: "@applescan",
+		href: "https://github.com/applescan",
+		note: "Code, experiments, and commit archaeology.",
 	},
 ];
 
-export default function Example() {
+export default function ContactPage() {
 	return (
-		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
-			<Navigation />
-			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
-				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
-					{socials.map((s) => (
-						<Card key={s.label}>
-							<Link
-								href={s.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24 lg:pb-48 md:p-16"
-							>
-								<span
-									className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
-									aria-hidden="true"
-								/>
-								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
-									{s.icon}
-								</span>
-								<div className="z-10 flex flex-col items-center">
-									<span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display">
-										{s.handle}
-									</span>
-									<span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">
-										{s.label}
-									</span>
-								</div>
-							</Link>
-						</Card>
-					))}
-				</div>
-			</div>
-		</div>
+		<>
+			<SiteHeader />
+			<main className="contact-page">
+				<section className="contact-hero page-shell">
+					<div>
+						<p className="kicker">OPEN CHANNEL / NO FORM REQUIRED</p>
+						<h1>Good ideas deserve a direct line.</h1>
+						<p className="contact-lead">
+							If you&apos;re building a product, shaping an interactive campaign, or
+							need an engineer who cares how the thing feels, send the context my way.
+						</p>
+					</div>
+					<div className="contact-stamp" aria-hidden="true">
+						<span>AVAILABLE FOR</span>
+						<strong>GOOD<br />CONVERSATIONS</strong>
+						<small>AUCKLAND · NZT</small>
+					</div>
+				</section>
+
+				<section className="contact-channels page-shell" aria-label="Contact channels">
+					{ channels.map((channel) => (
+						<a key={ channel.label } href={ channel.href } target={ channel.label === "Email" ? undefined : "_blank" } rel="noreferrer">
+							<span>{ channel.index }</span>
+							<div>
+								<p>{ channel.label }</p>
+								<h2>{ channel.handle }</h2>
+							</div>
+							<p>{ channel.note }</p>
+							<strong aria-hidden="true">↗</strong>
+						</a>
+					)) }
+				</section>
+
+				<section className="contact-note-section page-shell">
+					<p>Response protocol</p>
+					<h2>A real person reads every message. Specifics welcome; buzzwords optional.</h2>
+					<a className="primary-button" href="mailto:feliu.ren@gmail.com?subject=Hello%20Felicia">
+						Write the email <span aria-hidden="true">↗</span>
+					</a>
+				</section>
+			</main>
+		</>
 	);
 }

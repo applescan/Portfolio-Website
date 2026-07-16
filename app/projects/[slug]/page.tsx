@@ -1,39 +1,42 @@
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { allProjects } from "contentlayer/generated";
+import { notFound } from "next/navigation";
 import { Mdx } from "@/app/components/mdx";
+import { SiteFooter } from "@/app/components/site-footer";
+import { SiteHeader } from "@/app/components/site-header";
 import { Header } from "./header";
-import "./mdx.css";
 
-export const revalidate = 60;
+type Props = { params: { slug: string } };
 
-type Props = {
-	params: {
-		slug: string;
-	};
-};
-
-export async function generateStaticParams(): Promise<Props["params"][]> {
-	return allProjects
-		.filter((p) => p.published)
-		.map((p) => ({
-			slug: p.slug,
-		}));
+export function generateStaticParams(): Props["params"][] {
+	return allProjects.filter((project) => project.published).map((project) => ({ slug: project.slug }));
 }
 
-export default async function PostPage({ params }: Props) {
-	const slug = params?.slug;
-	const project = allProjects.find((project) => project.slug === slug);
+export function generateMetadata({ params }: Props): Metadata {
+	const project = allProjects.find((item) => item.slug === params.slug);
+	if (!project) return {};
 
-	if (!project) {
-		notFound();
-	}
+	return {
+		title: project.title,
+		description: project.description,
+		openGraph: project.thumbnail ? { images: [project.thumbnail] } : undefined,
+	};
+}
+
+export default function ProjectPage({ params }: Props) {
+	const project = allProjects.find((item) => item.slug === params.slug && item.published);
+	if (!project) notFound();
 
 	return (
-		<div className="bg-zinc-50 min-h-screen">
-			<Header project={project} />
-			<article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
-				<Mdx code={project.body.code} />
-			</article>
-		</div>
+		<>
+			<SiteHeader />
+			<main className="case-page">
+				<Header project={project} />
+				<article className="case-body">
+					<Mdx code={project.body.code} />
+				</article>
+			</main>
+			<SiteFooter />
+		</>
 	);
 }
